@@ -1,11 +1,8 @@
 import * as style from './colors';
+import containsObject from './containsObject';
 
 interface Logger {
   (...data: any[]): void;
-}
-
-function containsObject(...data: any[]): boolean {
-  return data.some(value => value instanceof Object);
 }
 
 export const log = console.log;
