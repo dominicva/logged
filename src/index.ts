@@ -1,5 +1,9 @@
-import { info, log } from './utils/loggers';
+import { info, log, success, warn, error } from './utils/loggers';
 
-info('Prisma is wild...');
-
+const test = true;
+success('Tests all passed :))', test);
+info('Prisma is wild...', 'right??', ['hi', 7, false]);
+warn('You might wanna check that out...');
+error('uh oh... something went wrong');
 log('seems boring now!');
+log('Prisma is wild...', 'right??', ['hi', 7, false]);
