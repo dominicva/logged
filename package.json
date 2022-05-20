@@ -1,0 +1,11 @@
+{
+  "name": "@notthedom/logged",
+  "version": "1.0.0",
+  "description": "Minimal config console.log prettifier",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dom van Almsick <notthedom@gmail.com>",
+  "license": "MIT"
+}
