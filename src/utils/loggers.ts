@@ -1,5 +1,6 @@
 import * as style from './colors';
 import containsObject from './containsObject';
+import { lowerCase, titleCase } from './strings';
 
 interface Logger {
   (...data: any[]): void;
@@ -7,33 +8,25 @@ interface Logger {
 
 export const log = console.log;
 
-export const info: Logger = (...data) => {
-  const { text, heading } = style.info;
+const genLogger =
+  (variant: string): Logger =>
+  (...data) => {
+    // @ts-ignore -> TS doesn't like accessing prop by [string]
+    const { text, heading } = style[lowerCase(variant)];
 
-  if (containsObject(data)) {
-    log(heading(' Info '));
-    data.forEach(v => {
-      v instanceof Object ? console.dir(v) : log(text(v));
-    });
-  } else {
-    log(heading(' Info '), text(...data));
-  }
-};
+    const label = heading(` ${titleCase(variant)} `);
 
-export const success: Logger = (...data) => {
-  const { text, heading } = style.success;
+    if (containsObject(data)) {
+      log(heading(label));
+      data.forEach(v => {
+        v instanceof Object ? console.dir(v) : log(text(v));
+      });
+    } else {
+      log(heading(label), text(...data));
+    }
+  };
 
-  log(`${heading(' Success ')}  ${text(...data)}`);
-};
-
-export const warn: Logger = (...data) => {
-  const { text, heading } = style.warn;
-
-  log(`${heading(' Warning ')}  ${text(...data)}`);
-};
-
-export const error: Logger = (...data) => {
-  const { text, heading } = style.error;
-
-  log(heading(' Error '), text(...data));
-};
+export const info = genLogger('info');
+export const success = genLogger('success');
+export const warn = genLogger('warn');
+export const error = genLogger('error');
