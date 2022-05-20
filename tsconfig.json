@@ -4,6 +4,7 @@
     "target": "ESNext",
     "module": "CommonJS",
     "declaration": true,
+    "declarationDir": "dist/types",
     "esModuleInterop": true,
     "moduleResolution": "node",
     "sourceMap": false,
