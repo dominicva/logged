@@ -4,8 +4,14 @@
   "description": "Minimal config console.log prettifier",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsc --watch"
   },
   "author": "Dom van Almsick <notthedom@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "17.0.35",
+    "prettier": "2.6.2",
+    "typescript": "4.6.4"
+  }
 }
