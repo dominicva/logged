@@ -1,31 +1,26 @@
 import chalk from 'chalk';
 
 interface ColorConfig {
-  [key: string]: {
-    [index: string]: chalk.Chalk;
-  };
+  text: chalk.Chalk;
+  heading: chalk.Chalk;
 }
 
-const colorPalette: ColorConfig = {
-  info: {
-    text: chalk.hex('#6198FF'),
-    heading: chalk.whiteBright.bold.bgHex('#6198FF'),
-  },
-  success: {
-    text: chalk.green,
-    heading: chalk.whiteBright.bold.bgGreen,
-  },
-  warn: {
-    text: chalk.hex('#FFA500'),
-    heading: chalk.whiteBright.bold.bgHex('#FFA500'),
-  },
-  error: {
-    text: chalk.red,
-    heading: chalk.whiteBright.bold.bgRed,
-  },
+export const info: ColorConfig = {
+  text: chalk.hex('#6198FF').bold,
+  heading: chalk.whiteBright.bold.bgHex('#6198FF'),
 };
 
-export const { info, success, warn, error } = colorPalette;
-export const { log } = console;
+export const success: ColorConfig = {
+  text: chalk.green,
+  heading: chalk.whiteBright.bold.bgGreen,
+};
 
-export default colorPalette;
+export const warn: ColorConfig = {
+  text: chalk.hex('#FFA500'),
+  heading: chalk.whiteBright.bold.bgHex('#FFA500'),
+};
+
+export const error: ColorConfig = {
+  text: chalk.red,
+  heading: chalk.whiteBright.bold.bgRed,
+};
