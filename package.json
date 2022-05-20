@@ -2,7 +2,7 @@
   "name": "@notthedom/logged",
   "version": "1.0.0",
   "description": "Minimal config console.log prettifier",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "tsc --watch"
@@ -13,5 +13,8 @@
     "@types/node": "17.0.35",
     "prettier": "2.6.2",
     "typescript": "4.6.4"
+  },
+  "dependencies": {
+    "chalk": "4.1.2"
   }
 }
