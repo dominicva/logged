@@ -1,9 +1,7 @@
-import { info, log, success, warn, error } from './utils/loggers';
+import { genLogger } from './utils/genLogger';
 
-const test = true;
-success('Tests all passed :))', test);
-info('Prisma is wild...', 'right??');
-warn('Houston we have a problem', ['hi', 7, false]);
-error(`uh oh... something went wrong: ${new Error('errrrr')}`);
-log('seems boring now!');
-log('Prisma is wild...', 'right??', ['hi', 7, false]);
+export const info = genLogger('info');
+export const success = genLogger('success');
+export const warn = genLogger('warn');
+export const error = genLogger('error');
+export const log = console.log;

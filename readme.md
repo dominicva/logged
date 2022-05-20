@@ -1,6 +1,6 @@
 # notthedom/logged
 
-## Bugs
+## Issues
 
 When you pass multiple and/or non-primitive arguments the styling performs a toString operation them.
 
